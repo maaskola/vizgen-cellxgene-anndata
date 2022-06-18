@@ -11,6 +11,7 @@ def run(csv_path: str,
         metadata_path: str,
         ):
     adata = ad.read_csv(csv_path, first_column_names=True)
+    adata.X = scipy.sparse.csr_matrix(adata.X)
     print('loaded {}'.format(adata))
     if metadata_path:
         metadata = pd.read_csv(metadata_path, header=0, index_col=0)
