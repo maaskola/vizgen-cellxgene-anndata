@@ -21,12 +21,14 @@ setup(
     install_requires=[
         'Click',
         'anndata',
-        'dask',
+        'pandas',
+        'scipy',
+        'numpy',
+        'matplotlib',
     ],
     entry_points=f'''
         [console_scripts]
         {program_name}-cellxgene_to_h5ad={package_dir}.cellxgene_to_h5ad:run
-        {program_name}-merge-tx-cells={package_dir}.merge-tx-cells:run
     ''',
     author='Jonas Maaskola',
     author_email='jonas.maaskola@weizmann.ac.il',
